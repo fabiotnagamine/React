@@ -1,0 +1,100 @@
+.main {
+    background-color: rgb(177, 176, 176);
+    padding:30px;
+    margin: 50px auto;
+    border-radius: 20px;
+    box-shadow: 0 0 10px 0 rgba(255, 0, 0, 0.5);
+    max-width: 75%;
+}
+.main h1{
+    font-size: 20px;
+    color: black;
+    text-align: center;
+}
+
+.form {
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.form input{
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+    
+
+    
+}
+
+.form button{
+    display: flex;
+    margin-left: 10px;
+    justify-content: center;
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+    background-color: rgb(144, 0, 255);
+    color: white;
+    font-size: 16px;
+}
+
+.tasks {
+    font-family: sans-serif;
+    margin-top: 10px;
+    padding-top: 15px;
+}
+
+
+
+.main li{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.main ul :hover{
+    background: rgb(248, 13, 107);
+    font-style: italic;
+}
+.main li .button_edit{
+   margin-right: 10px;
+    justify-content: space-between;
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+    background-color: rgb(144, 0, 255);
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+
+}
+
+.main li .button_delete{
+    justify-content: space-between;
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+    background-color: rgb(144, 0, 255);
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.tasks li :hover .button_edit
+.tasks li :hover .button_delete{
+    color: black;
+}
+
+.tasks li :hover{
+    background: rgb(248, 13, 107);
+    font-style: italic;
+    display: flex;
+    align-items: center ;
+} 
