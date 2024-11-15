@@ -1,0 +1,17 @@
+.tasks li :hover .button_edit
+.tasks li :hover .button_delete{
+    color: black;
+}
+
+.tasks li :hover{
+    background: rgb(248, 13, 107);
+    font-style: italic;
+    display: flex;
+    align-items: center ;
+} 
+
+.tasks {
+    font-family: sans-serif;
+    margin-top: 10px;
+    padding-top: 15px;
+}

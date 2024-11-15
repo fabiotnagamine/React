@@ -1,6 +1,8 @@
   import React, { Component } from "react";
   import "./Main.css";
-  import { FaEdit, FaPlus, FaWindowClose } from "react-icons/fa";
+  import Forms from "./Forms";
+  import Task from "./Tasks";
+
 
   export default class Main extends Component {
     state = {
@@ -8,6 +10,20 @@
       tasks: [],
       index: -1,
     };
+
+
+    
+
+    componentDidMount() {
+      const tasks = JSON.parse(localStorage.getItem("tasks"));
+      if(!tasks) return;
+      this.setState({ tasks });
+    }
+
+   componentDidUpdate(prevProps, prevState) {
+      prevState.tasks !== this.state.tasks && localStorage.setItem("tasks", JSON.stringify(this.state.tasks));
+   }
+
 
     handleChange = (event) => {
       this.setState({ newTask: event.target.value });
@@ -66,28 +82,21 @@
         <>
           <div className="main">
             <h1>Todo List</h1>
-            <form onSubmit={this.handleSubmit} className="form" action="#">
-              
-              <input
-                onChange={this.handleChange}
-                type="text"
-                value={newTask}
-              />
-              <button type="submit">
-                <FaPlus />
-              </button>
-            </form>
-            <ul className="tasks">
-              {tasks.map((task, index) => (
-                <li key={task}>
-                  {task}
-                  <span className="buttons">
-                  <FaEdit className="button_edit" onClick={() => this.handleEdit(index)} />
-                  <FaWindowClose className="button_delete" onClick={(event) => this.handleDelete(event, index) } />
-                  </span>
-                </li>
-              ))}
-            </ul>
+
+            <Forms 
+              handleSubmit={this.handleSubmit}
+              handleChange={this.handleChange}
+              newTask={newTask}
+            />
+
+            <Task
+              tasks={tasks}
+              handleEdit={this.handleEdit}
+              handleDelete={this.handleDelete}
+              index={this.state.index}
+            />
+
+            
           </div>
         </>
       );
